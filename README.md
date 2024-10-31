@@ -1,2 +1,3 @@
 # nime-template
-A NIME-flavoured LaTeX Publication Template
+
+A NIME-flavoured Publication Template
