@@ -1,5 +1,6 @@
 % NIME-ALTERNATE.CLS - VERSION 2.4.1
 % "COMPATIBLE" WITH THE "ACM_PROC_ARTICLE-SP.CLS" V3.2SP\
+% Revised by Florent Berthaut - 31 October 2024
 % Revised by Andrew McPherson - 14 October 2015
 % Revised by Baptiste Caramiaux - 25 November 2013
 % Alexander Refsum Jensenius - 27 October 2010
@@ -57,16 +58,14 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{graphicx}
-\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,
+            linkcolor=black,
+            filecolor=black,
+            citecolor=black,
+            urlcolor=black}
 \usepackage[a4paper]{geometry}
-%\usepackage[
-%	pdftex, 
-%	colorlinks,
-%	citecolor=red,
-%	urlcolor=blue,
- %   hyperfigures,
-%	pdfpagelabels=false;
- % 	]{hyperref}
+
 
 % Need this for accents in Arial/Helvetica
 %\usepackage[T1]{fontenc}  % Gerry March 12, 2007 - causes Type 3 problems (body text)
