@@ -1,5 +1,6 @@
 % Template for NIME 2023
 
+% Modified by Florent Berthaut 31 October 2024
 % Modified by Adnan Marquez-Borbon 30 November 2022
 % Modified by Courtney Reed 28 November 2022
 % Modified by Joe Wright 14 December 2019
@@ -17,7 +18,7 @@
 % Based on "sig-alternate.tex" V1.9 April 2009
 % This file should be compiled with "nime-alternate.cls"
 
-\documentclass{nime-alternate} % Uncomment when publishing final version
+\documentclass{nime-alternate}
 
 % Uncomment only one of the ones below
 \usepackage{anonymize} 		   %Uncomment this line to publish
@@ -26,6 +27,10 @@
 % Package that enables the use of accents and non 
 % standard characters
 \usepackage[utf8]{inputenc}
+
+% Package and option to handle bibliography
+\usepackage[numbers]{natbib}
+\bibliographystyle{nime-alternate}
 
 \begin{document}
 
@@ -519,7 +524,7 @@ You will note that \cite{\anoncite{mypublication}} and \cite{\anoncite{myotherpu
 
 \subsection{Links}
 
-Links to URLs can be included using the \texttt{{\char'134}url} command. This will generate a clickable link like this: \url{https://www.nime2020.bcu.ac.uk}.
+Links to URLs can be included using the \texttt{{\char'134}url} command. This will generate a clickable link like this: \url{https://www.nime.org}.
 
 
 \section{Conclusions}
@@ -550,13 +555,10 @@ To ensure objectivity and transparency in research and to ensure that accepted p
 
 
 %
-% The following two commands are all you need in the
+% The following command is all you need in the
 % initial runs of your .tex file to
 % produce the bibliography for the citations in your paper.
-\bibliographystyle{abbrv}
-
-	\bibliography{nime-references} 
-
+\bibliography{nime-references}
 
 % You must have a proper ".bib" file
 %  and remember to run:
