@@ -22,7 +22,7 @@
 
 % Uncomment only one of the ones below
 \usepackage{anonymize} 		   %Uncomment this line to publish
-% \usepackage[blind]{anonymize}%Uncomment this line for blind review
+%\usepackage[blind]{anonymize}%Uncomment this line for blind review
 
 % Package that enables the use of accents and non 
 % standard characters
@@ -504,16 +504,23 @@ This is what is stipulated in the SIGS style specifications.
 No other citation format is endorsed or supported.
 
 \subsection{Blind Review}
-A convenient flag has been provided that will allow you to easily mask any text or reference that could be used to identify you as the author. To enable the feature, comment the line \texttt{\textbackslash usepackage{anonymize}} and uncomment the \texttt{\textbackslash usepackage[blind]{anonymize}} lines near the top of the file. When \texttt{\textbackslash usepackage[blind]{anonymize}} is enabled, anonymized text will be blackened out and masked bibliography names and titles will be anonymised. For example, the following will cause the package to generate a blind review version of the manuscript.\\
+A convenient flag has been provided that will allow you to easily mask any text
+or reference that could be used to identify you as the author. To enable the
+feature, comment the line \texttt{\textbackslash usepackage\{anonymize\}} and
+uncomment the \texttt{\textbackslash usepackage[blind]\{anonymize\}} lines near
+the top of the file. When \texttt{\textbackslash usepackage[blind]\{anonymize\}}
+is enabled, anonymized text will be blackened out and masked bibliography names
+and titles will be anonymised. For example, the following will cause the package
+to generate a blind review version of the manuscript.\\
 
-\texttt{\% \textbackslash usepackage{anonymize}}  \\
-\texttt{\textbackslash usepackage[blind]{anonymize}} \\
+\texttt{\%\textbackslash usepackage\{anonymize\}}  \\
+\texttt{\textbackslash usepackage[blind]\{anonymize\}} \\
 
 
 The following configuration will cause the manuscript to disable masking text and produce the version of the manuscript for publication.
 
-\texttt{\textbackslash usepackage{anonymize}} \\
-\texttt{\%\textbackslash usepackage[blind]{anonymize}} \\
+\texttt{\textbackslash usepackage\{anonymize\}} \\
+\texttt{\%\textbackslash usepackage[blind]\{anonymize\}} \\
 
 \subsubsection{Masking text}
 To mask text that may identify you, place the text you want to hide inside the \textbackslash anonymize function. If you have enabled the blind review feature, \anonymize{you will not be able to read this text}. Change back to the non-blind mode when you are ready to publish. 
