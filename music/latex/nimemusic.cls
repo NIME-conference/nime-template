@@ -1824,9 +1824,10 @@
   \andify\shortauthors
   \global\let\authors=\authors
   \global\let\shortauthors=\shortauthors
-  \if@ACM@printacmref
-     \@mkbibcitation
-  \fi
+  % deactivate acmref under all circumstances.
+  % \if@ACM@printacmref
+  %    \@mkbibcitation
+  % \fi
   \hypersetup{%
     pdfauthor={\authors},
     pdftitle={\@title},
