@@ -1357,6 +1357,7 @@
 \acmISBN{978-x-xxxx-xxxx-x/YY/MM}
 \def\nimeDOI#1{\def\@nimeDOI{#1}}
 \nimeDOI{10.1145/nnnnnnn.nnnnnnn}
+\def\whichProceedings#1{\def\whichProceedings{#1}}
 \def\whichNIME#1{\def\whichNIME{#1}}
 \newif\if@ACM@badge
 \@ACM@badgefalse
@@ -1763,8 +1764,8 @@
        \fi
     \fi
     \if@printcopyright
-      DOI: \@formatdoi{\@nimeDOI}\\
-      Music Proceedings of the International Conference on New Interfaces for Musical Expression \\
+      % DOI: \@formatdoi{\@nimeDOI}\\
+      \whichProceedings \\
       \whichNIME
       % \copyright\ \@copyrightyear\ \@copyrightowner\\
     \else
