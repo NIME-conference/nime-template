@@ -2460,11 +2460,13 @@
       \fancyhead[RE]{\@headfootfont\@shortauthors\ACM@linecountR}%
       \if@ACM@nonacm\else%
         \fancyhead[LE]{\ACM@linecountL\@headfootfont\footnotesize
-          \acmConference@shortname,
-          \acmConference@date, \acmConference@venue}%
+          %\acmConference@shortname,
+          %\acmConference@date, \acmConference@venue
+          \whichNIME}%
         \fancyhead[RO]{\@headfootfont
-          \acmConference@shortname,
-          \acmConference@date, \acmConference@venue\ACM@linecountR}%
+          %\acmConference@shortname,
+          %\acmConference@date, \acmConference@venue\ACM@linecountR
+          \whichNIME}%
       \fi
     \fi
   \else % Proceedings
@@ -2473,11 +2475,13 @@
     \fancyhead[RE]{\@headfootfont\@shortauthors\ACM@linecountR}%
     \if@ACM@nonacm\else%
       \fancyhead[LE]{\ACM@linecountL\@headfootfont
-        \acmConference@shortname,
-        \acmConference@date, \acmConference@venue}%
+        %\acmConference@shortname,
+        %\acmConference@date, \acmConference@venue
+        \whichNIME}%
       \fancyhead[RO]{\@headfootfont
-        \acmConference@shortname,
-        \acmConference@date, \acmConference@venue\ACM@linecountR}%
+        %\acmConference@shortname,
+        %\acmConference@date, \acmConference@venue\ACM@linecountR}%
+        \whichNIME}%
     \fi
   \fi
   \if@ACM@sigchiamode
