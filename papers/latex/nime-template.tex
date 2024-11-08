@@ -18,21 +18,8 @@
 % Based on "sig-alternate.tex" V1.9 April 2009
 % This file should be compiled with "nime-alternate.cls"
 
-\documentclass{nime-alternate}
-
-% Uncomment only one of the ones below
-\usepackage{anonymize} 		   %Uncomment this line to publish
-%\usepackage[blind]{anonymize}%Uncomment this line for blind review
-
-% Package that enables the use of accents and non 
-% standard characters
-\usepackage[utf8]{inputenc}
-
-% Package and option to handle bibliography
-\usepackage[numbers]{natbib}
-\bibliographystyle{ACM-Reference-Format}
-
-\begin{document}
+%\documentclass{nime-alternate}
+\documentclass[sigconf]{nimepaper}
 
 % --- Author Metadata here ---
 %\conferenceinfo{NIME'17,}{May 15-19, 2017, Aalborg University Copenhagen, Denmark.}
@@ -42,7 +29,24 @@
 %\conferenceinfo{NIME'22,}{June 28 - July 1, 2022, Waipapa Taumata Rau, T\={a}maki ~~~~~~~~ Makaurau, Aotearoa}
 %\conferenceinfo{NIME'24,}{4--6 September, Utrecht, The Netherlands.}
 
-\conferenceinfo{Proceedings of the International Conference on New Interfaces for Musical Expression (NIME'25).}{June 24--27, 2025. The Australian National University, Canberra, Australia.}
+\setcopyright{cc4}
+\nimeYear{2024}
+\nimeMonth{9}
+% \nimeDOI{10.1145/XXXXXXX.XXXXXXX}
+% \whichProceedings{Music Proceedings of the International Conference on New Interfaces for Musical Expression}
+\whichNIME{NIME'25, June 24--27, 2025. The Australian National University, Canberra, Australia.}
+
+% Uncomment only one of the ones below
+\usepackage{anonymize} 		   %Uncomment this line to publish
+%\usepackage[blind]{anonymize}%Uncomment this line for blind review
+
+% Package that enables the use of accents and non 
+% standard characters
+%\usepackage[utf8]{inputenc}
+
+
+\begin{document}
+
 
 \title{NIME Proceedings Template for LaTeX}
 
@@ -57,7 +61,7 @@
 % the number of 'columns' to three.
 %
 % Because of the available 'opening page real-estate'
-\label{key}% we ask you to refrain from putting more than six authors
+%\label{key}% we ask you to refrain from putting more than six authors
 % (two rows with three columns) beneath the article title.
 % More than six makes the first-page appear very cluttered indeed.
 %
@@ -70,11 +74,31 @@
 % without further effort on your part as the last section in
 % the body of your article BEFORE References or any Appendices.
 
-\numberofauthors{8} %  in this sample file, there are a *total*
+%\numberofauthors{8} %  in this sample file, there are a *total*
 % of EIGHT authors. SIX appear on the 'first-page' (for formatting
 % reasons) and the remaining two appear in the \additionalauthors section.
 %
-\author{
+\author{\anonymize{Author One}}
+\affiliation{%
+    \institution{\anonymize{Affilitation}}
+  \city{\anonymize{City}}
+  \country{\anonymize{Country}}
+}
+
+\author{\anonymize{Author Two}}
+\affiliation{%
+    \institution{\anonymize{Another Affilitation}}
+  \city{\anonymize{City}}
+  \country{\anonymize{Country}}
+}
+
+\author{\anonymize{Author Three}}
+\affiliation{%
+    \institution{\anonymize{More Affilitations}}
+  \city{\anonymize{City}}
+  \country{\anonymize{Country}}
+}
+%\author{
 % You can go ahead and credit any number of authors here,
 % e.g. one 'row of three' or two rows (consisting of one row of three
 % and a second row of one, two or three).
@@ -86,62 +110,61 @@
 % e-mail address with \email.
 %
 % 1st. author
-\alignauthor
-\anonymize{Ben Trovato}\titlenote{\anonymize{Dr.~Trovato insisted his name be first.}}\\
-       \affaddr{\anonymize{Institute for Clarity in Documentation}}\\
-       \affaddr{\anonymize{1932 Wallamaloo Lane}}\\
-       \affaddr{\anonymize{Wallamaloo, New Zealand}}\\
-       \email{\anonymize{trovato@corporation.com}}
-% 2nd. author
-\alignauthor
-\anonymize{G.K.M. Tobin}\titlenote{\anonymize{The secretary disavows
-any knowledge of this author's actions.}}\\
-       \affaddr{\anonymize{Institute for Clarity in Documentation}}\\
-       \affaddr{\anonymize{P.O. Box 1212}}\\
-       \affaddr{\anonymize{Dublin, Ohio 43017-6221}}\\
-       \email{\anonymize{webmaster@marysville-ohio.com}}
-% 3rd. author
-\alignauthor \anonymize{Lars Th{\o}rv{\"a}ld}\titlenote{This author is the
-one who did all the really hard work.}\\
-       \affaddr{\anonymize{The Th{\o}rv{\"a}ld Group}}\\
-       \affaddr{\anonymize{1 Th{\o}rv{\"a}ld Circle}}\\
-       \affaddr{\anonymize{Hekla, Iceland}}\\
-       \email{l\anonymize{arst@affiliation.org}}
-\and  % use '\and' if you need 'another row' of author names
-% 4th. author
-\alignauthor \anonymize{Lawrence P. Leipuner}\\
-       \affaddr{\anonymize{Brookhaven Laboratories}}\\
-       \affaddr{\anonymize{Brookhaven National Lab}}\\
-       \affaddr{\anonymize{P.O. Box 5000}}\\
-       \email{\anonymize{lleipuner@researchlabs.org}}
-% 5th. author
-\alignauthor \anonymize{Sean Fogarty}\\
-       \affaddr{\anonymize{NASA Ames Research Center}}\\
-       \affaddr{\anonymize{Moffett Field}}\\
-       \affaddr{\anonymize{California 94035}}\\
-       \email{\anonymize{fogartys@amesres.org}}
-% 6th. author
-\alignauthor \anonymize{Anon Nymous}\\
-       \affaddr{\anonymize{Redacted }}\\
-       \affaddr{\anonymize{8600 Datapoint Drive}}\\
-       \affaddr{\anonymize{San Antonio, Texas 78229}}\\
-       \email{\anonymize{cpalmer@prl.com}}
-}
+%\alignauthor
+%\anonymize{Ben Trovato}\titlenote{\anonymize{Dr.~Trovato insisted his name be first.}}\\
+%       \affaddr{\anonymize{Institute for Clarity in Documentation}}\\
+%       \affaddr{\anonymize{1932 Wallamaloo Lane}}\\
+%       \affaddr{\anonymize{Wallamaloo, New Zealand}}\\
+%       \email{\anonymize{trovato@corporation.com}}
+%% 2nd. author
+%\alignauthor
+%\anonymize{G.K.M. Tobin}\titlenote{\anonymize{The secretary disavows
+%any knowledge of this author's actions.}}\\
+%       \affaddr{\anonymize{Institute for Clarity in Documentation}}\\
+%       \affaddr{\anonymize{P.O. Box 1212}}\\
+%       \affaddr{\anonymize{Dublin, Ohio 43017-6221}}\\
+%       \email{\anonymize{webmaster@marysville-ohio.com}}
+%% 3rd. author
+%\alignauthor \anonymize{Lars Th{\o}rv{\"a}ld}\titlenote{This author is the
+%one who did all the really hard work.}\\
+%       \affaddr{\anonymize{The Th{\o}rv{\"a}ld Group}}\\
+%       \affaddr{\anonymize{1 Th{\o}rv{\"a}ld Circle}}\\
+%       \affaddr{\anonymize{Hekla, Iceland}}\\
+%       \email{l\anonymize{arst@affiliation.org}}
+%\and  % use '\and' if you need 'another row' of author names
+%% 4th. author
+%\alignauthor \anonymize{Lawrence P. Leipuner}\\
+%       \affaddr{\anonymize{Brookhaven Laboratories}}\\
+%       \affaddr{\anonymize{Brookhaven National Lab}}\\
+%       \affaddr{\anonymize{P.O. Box 5000}}\\
+%       \email{\anonymize{lleipuner@researchlabs.org}}
+%% 5th. author
+%\alignauthor \anonymize{Sean Fogarty}\\
+%       \affaddr{\anonymize{NASA Ames Research Center}}\\
+%       \affaddr{\anonymize{Moffett Field}}\\
+%       \affaddr{\anonymize{California 94035}}\\
+%       \email{\anonymize{fogartys@amesres.org}}
+%% 6th. author
+%\alignauthor \anonymize{Anon Nymous}\\
+%       \affaddr{\anonymize{Redacted }}\\
+%       \affaddr{\anonymize{8600 Datapoint Drive}}\\
+%       \affaddr{\anonymize{San Antonio, Texas 78229}}\\
+%       \email{\anonymize{cpalmer@prl.com}}
+%}
 % There's nothing stopping you putting the seventh, eighth, etc.
 % author on the opening page (as the 'third row') but we ask,
 % for aesthetic reasons that you place these 'additional authors'
 % in the \additional authors block, viz.
-\additionalauthors{Additional authors: \anonymize{John Smith (The Th{\o}rv{\"a}ld Group,}
-email: {\texttt{\anonymize{jsmith@affiliation.org}}}) and \anonymize{Julius P.~Kumquat 
-(K. Consortium,} email: {\texttt{\anonymize{jpkumquat@consortium.net}}}).}
-\date{30 July 1999}
+%\additionalauthors{Additional authors: \anonymize{John Smith (The Th{\o}rv{\"a}ld Group,}
+%email: {\texttt{\anonymize{jsmith@affiliation.org}}}) and \anonymize{Julius P.~Kumquat 
+%(K. Consortium,} email: {\texttt{\anonymize{jpkumquat@consortium.net}}}).}
+%\date{30 July 1999}
 % Just remember to make sure that the TOTAL number of authors
 % is the number that will appear on the first page PLUS the
 % number that will appear in the \additionalauthors section.
 
 % For your initial submission you MUST ANONYMIZE the authors.
 
-\maketitle
 
 \begin{abstract}
 This paper provides a sample of a \LaTeX\ document for the NIME conference series. It conforms,
@@ -159,7 +182,8 @@ and BibTeX, and compare this source code with your compiled PDF file. A compiled
 
 The abstract should preferably be between 100 and 200 words.
 \end{abstract} 
-\keywords{NIME, proceedings, \LaTeX, template}
+
+
 
 % ------- CCS Concepts
 % Here is where you enter the CCS Concepts for your paper.
@@ -196,14 +220,26 @@ The abstract should preferably be between 100 and 200 words.
 % 6) For this document, keep only the \ccsdesc lines. Here is what
 %    you would paste for the classification example:
 
-\ccsdesc[500]{Applied computing~Sound and music computing}
-\ccsdesc[100]{Applied computing~Performing arts}
-\ccsdesc[300]{Information systems~Music retrieval}
+%% The code below is generated by the tool at http://dl.acm.org/ccs.cfm.
+%% Please copy and paste the code instead of the example below.
+%%
+%\begin{CCSXML}
+%<ccs2012>
+% </ccs2012>
+%\end{CCSXML}
+%
+%\ccsdesc[500]{Applied computing~Sound and music computing}
+%\ccsdesc[100]{Applied computing~Performing arts}
+%\ccsdesc[300]{Information systems~Music retrieval}
+
+\keywords{NIME, proceedings, \LaTeX, template}
 
 % this line creates the CCS Concepts section.
-\printccsdesc
+%\printccsdesc
 
-\textbf{Please read the comments starting on line 140 of the nime-template.tex file to see how to create the CCS Concept Classifications!} % Remove this line in your paper!
+%\textbf{Please read the comments starting on line 140 of the nime-template.tex file to see how to create the CCS Concept Classifications!} % Remove this line in your paper!
+
+\maketitle
 
 \section{Introduction}
 The \textit{proceedings} are the records of a conference.
@@ -228,7 +264,7 @@ specifically available for denoting the structure of a
 proceedings paper, rather than with giving rigorous descriptions
 or explanations of such commands.
 
-\section{The {\secit Body} of The Paper}
+\section{The Body of The Paper}
 Typically, the body of a paper is organized
 into a hierarchical structure, with numbered or unnumbered
 headings for sections, subsections, sub-subsections, and even
@@ -252,7 +288,7 @@ the \textbf{document} environment, you can indicate the
 start of a new paragraph with a blank line in your
 input file; that is why this sentence forms a separate paragraph.
 
-\subsection{Type Changes and {\subsecit Special} Characters}
+\subsection{Type Changes and { Special} Characters}
 We have already seen several typeface changes in this sample.  You
 can indicate italicized words or phrases in your text with
 the command \texttt{{\char'134}textit}; emboldening with the
@@ -408,7 +444,7 @@ to compare the two in the output of this sample document:
 
 This uses the \textbf{theorem} environment, created by
 the\linebreak\texttt{{\char'134}newtheorem} command:
-\newtheorem{theorem}{Theorem}
+%\newtheorem{theorem}{Theorem}
 \begin{theorem}
 Let $f$ be continuous on $[a,b]$.  If $G$ is
 an antiderivative for $f$ on $[a,b]$, then
@@ -417,7 +453,7 @@ an antiderivative for $f$ on $[a,b]$, then
 
 The other uses the \textbf{definition} environment, created
 by the \texttt{{\char'134}newdef} command:
-\newdef{definition}{Definition}
+%\newdef{definition}{Definition}
 \begin{definition}
 If $z$ is irrational, then by $e^z$ we mean the
 unique number which has
@@ -461,7 +497,7 @@ use the \texttt{{\char'134}newtheorem} or the
 \texttt{{\char'134}newdef} command,
 respectively, to create it.
 
-\subsection{A {\secit Caveat} for the \TeX\ Expert}
+\subsection{A Caveat for the \TeX\ Expert}
 Because you have just been given permission to
 use the \texttt{{\char'134}newdef} command to create a
 new form, you might think you can
@@ -566,6 +602,7 @@ To ensure objectivity and transparency in research and to ensure that accepted p
 % The following command is all you need in the
 % initial runs of your .tex file to
 % produce the bibliography for the citations in your paper.
+\bibliographystyle{ACM-Reference-Format}
 \bibliography{references}
 
 % You must have a proper ".bib" file
