@@ -36,10 +36,6 @@
 % \whichProceedings{Music Proceedings of the International Conference on New Interfaces for Musical Expression}
 \whichNIME{NIME'25, June 24--27, 2025. The Australian National University, Canberra, Australia.}
 
-% Uncomment only one of the ones below
-\usepackage{anonymize} 		   %Uncomment this line to publish
-%\usepackage[blind]{anonymize}%Uncomment this line for blind review
-
 % Package that enables the use of accents and non 
 % standard characters
 %\usepackage[utf8]{inputenc}
@@ -49,121 +45,91 @@
 
 
 \title{NIME Proceedings Template for LaTeX}
-
-% You need the command \numberofauthors to handle the 'placement
-% and alignment' of the authors beneath the title.
-%
-% For aesthetic reasons, we recommend 'three authors at a time'
-% i.e. three 'name/affiliation blocks' be placed beneath the title.
-%
-% NOTE: You are NOT restricted in how many 'rows' of
-% "name/affiliations" may appear. We just ask that you restrict
-% the number of 'columns' to three.
-%
-% Because of the available 'opening page real-estate'
-%\label{key}% we ask you to refrain from putting more than six authors
-% (two rows with three columns) beneath the article title.
-% More than six makes the first-page appear very cluttered indeed.
-%
-% Use the \alignauthor commands to handle the names
-% and affiliations for an 'aesthetic maximum' of six authors.
-% Add names, affiliations, addresses for
-% the seventh etc. author(s) as the argument for the
-% \additionalauthors command.
-% These 'additional authors' will be output/set for you
-% without further effort on your part as the last section in
-% the body of your article BEFORE References or any Appendices.
-
-%\numberofauthors{8} %  in this sample file, there are a *total*
-% of EIGHT authors. SIX appear on the 'first-page' (for formatting
-% reasons) and the remaining two appear in the \additionalauthors section.
-%
-\author{\anonymize{Author One}}
+%%
+%% The "author" command and its associated commands are used to define
+%% the authors and their affiliations.
+%% Of note is the shared affiliation of the first two authors, and the
+%% "authornote" and "authornotemark" commands
+%% used to denote shared contribution to the research.
+\author{Ben Trovato}
+\authornote{Both authors contributed equally to this research.}
+\email{trovato@corporation.com}
+\orcid{1234-5678-9012}
+\author{G.K.M. Tobin}
+\authornotemark[1]
+\email{webmaster@marysville-ohio.com}
 \affiliation{%
-    \institution{\anonymize{Affilitation}}
-  \city{\anonymize{City}}
-  \country{\anonymize{Country}}
+  \institution{Institute for Clarity in Documentation}
+  \streetaddress{P.O. Box 1212}
+  \city{Dublin}
+  \state{Ohio}
+  \country{USA}
+  \postcode{43017-6221}
 }
 
-\author{\anonymize{Author Two}}
+\author{Lars Th{\o}rv{\"a}ld}
 \affiliation{%
-    \institution{\anonymize{Another Affilitation}}
-  \city{\anonymize{City}}
-  \country{\anonymize{Country}}
+  \institution{The Th{\o}rv{\"a}ld Group}
+  \streetaddress{1 Th{\o}rv{\"a}ld Circle}
+  \city{Hekla}
+  \country{Iceland}}
+\email{larst@affiliation.org}
+
+\author{Valerie B\'eranger}
+\affiliation{%
+  \institution{Inria Paris-Rocquencourt}
+  \city{Rocquencourt}
+  \country{France}
 }
 
-\author{\anonymize{Author Three}}
+\author{Aparna Patel}
 \affiliation{%
-    \institution{\anonymize{More Affilitations}}
-  \city{\anonymize{City}}
-  \country{\anonymize{Country}}
-}
-%\author{
-% You can go ahead and credit any number of authors here,
-% e.g. one 'row of three' or two rows (consisting of one row of three
-% and a second row of one, two or three).
-%
-% The command \alignauthor (no curly braces needed) should
-% precede each author name, affiliation/snail-mail address and
-% e-mail address. Additionally, tag each line of
-% affiliation/address with \affaddr, and tag the
-% e-mail address with \email.
-%
-% 1st. author
-%\alignauthor
-%\anonymize{Ben Trovato}\titlenote{\anonymize{Dr.~Trovato insisted his name be first.}}\\
-%       \affaddr{\anonymize{Institute for Clarity in Documentation}}\\
-%       \affaddr{\anonymize{1932 Wallamaloo Lane}}\\
-%       \affaddr{\anonymize{Wallamaloo, New Zealand}}\\
-%       \email{\anonymize{trovato@corporation.com}}
-%% 2nd. author
-%\alignauthor
-%\anonymize{G.K.M. Tobin}\titlenote{\anonymize{The secretary disavows
-%any knowledge of this author's actions.}}\\
-%       \affaddr{\anonymize{Institute for Clarity in Documentation}}\\
-%       \affaddr{\anonymize{P.O. Box 1212}}\\
-%       \affaddr{\anonymize{Dublin, Ohio 43017-6221}}\\
-%       \email{\anonymize{webmaster@marysville-ohio.com}}
-%% 3rd. author
-%\alignauthor \anonymize{Lars Th{\o}rv{\"a}ld}\titlenote{This author is the
-%one who did all the really hard work.}\\
-%       \affaddr{\anonymize{The Th{\o}rv{\"a}ld Group}}\\
-%       \affaddr{\anonymize{1 Th{\o}rv{\"a}ld Circle}}\\
-%       \affaddr{\anonymize{Hekla, Iceland}}\\
-%       \email{l\anonymize{arst@affiliation.org}}
-%\and  % use '\and' if you need 'another row' of author names
-%% 4th. author
-%\alignauthor \anonymize{Lawrence P. Leipuner}\\
-%       \affaddr{\anonymize{Brookhaven Laboratories}}\\
-%       \affaddr{\anonymize{Brookhaven National Lab}}\\
-%       \affaddr{\anonymize{P.O. Box 5000}}\\
-%       \email{\anonymize{lleipuner@researchlabs.org}}
-%% 5th. author
-%\alignauthor \anonymize{Sean Fogarty}\\
-%       \affaddr{\anonymize{NASA Ames Research Center}}\\
-%       \affaddr{\anonymize{Moffett Field}}\\
-%       \affaddr{\anonymize{California 94035}}\\
-%       \email{\anonymize{fogartys@amesres.org}}
-%% 6th. author
-%\alignauthor \anonymize{Anon Nymous}\\
-%       \affaddr{\anonymize{Redacted }}\\
-%       \affaddr{\anonymize{8600 Datapoint Drive}}\\
-%       \affaddr{\anonymize{San Antonio, Texas 78229}}\\
-%       \email{\anonymize{cpalmer@prl.com}}
-%}
-% There's nothing stopping you putting the seventh, eighth, etc.
-% author on the opening page (as the 'third row') but we ask,
-% for aesthetic reasons that you place these 'additional authors'
-% in the \additional authors block, viz.
-%\additionalauthors{Additional authors: \anonymize{John Smith (The Th{\o}rv{\"a}ld Group,}
-%email: {\texttt{\anonymize{jsmith@affiliation.org}}}) and \anonymize{Julius P.~Kumquat 
-%(K. Consortium,} email: {\texttt{\anonymize{jpkumquat@consortium.net}}}).}
-%\date{30 July 1999}
-% Just remember to make sure that the TOTAL number of authors
-% is the number that will appear on the first page PLUS the
-% number that will appear in the \additionalauthors section.
+ \institution{Rajiv Gandhi University}
+ \streetaddress{Rono-Hills}
+ \city{Doimukh}
+ \state{Arunachal Pradesh}
+ \country{India}}
 
-% For your initial submission you MUST ANONYMIZE the authors.
+\author{Huifen Chan}
+\affiliation{%
+  \institution{Tsinghua University}
+  \streetaddress{30 Shuangqing Rd}
+  \city{Haidian Qu}
+  \state{Beijing Shi}
+  \country{China}}
+
+\author{Charles Palmer}
+\affiliation{%
+  \institution{Palmer Research Laboratories}
+  \streetaddress{8600 Datapoint Drive}
+  \city{San Antonio}
+  \state{Texas}
+  \country{USA}
+  \postcode{78229}}
+\email{cpalmer@prl.com}
+
+\author{John Smith}
+\affiliation{%
+  \institution{The Th{\o}rv{\"a}ld Group}
+  \streetaddress{1 Th{\o}rv{\"a}ld Circle}
+  \city{Hekla}
+  \country{Iceland}}
+\email{jsmith@affiliation.org}
+
+\author{Julius P. Kumquat}
+\affiliation{%
+  \institution{The Kumquat Consortium}
+  \city{New York}
+  \country{USA}}
+\email{jpkumquat@consortium.net}
+
+%%
+%% By default, the full list of authors will be used in the page
+%% headers. Often, this list is too long, and will overlap
+%% other information printed in the page headers. This command allows
+%% the author to define a more concise list
+%% of authors' names for this purpose.
+\renewcommand{\shortauthors}{Trovato and Tobin, et al.}
 
 
 \begin{abstract}
@@ -183,61 +149,8 @@ and BibTeX, and compare this source code with your compiled PDF file. A compiled
 The abstract should preferably be between 100 and 200 words.
 \end{abstract} 
 
-
-
-% ------- CCS Concepts
-% Here is where you enter the CCS Concepts for your paper.
-%
-% It is strongly recommended that authors view the submission form
-% prior to starting to write the paper, which includes information 
-% on the CCS Concepts. 
-% 
-% The 2012 ACM Computing Classification System (CCS) replaces the
-% traditional 1998 version, which has served as the de facto 
-% standard classification system for the computing field. It is
-% being integrated into the search capabilities and visual topic 
-% displays of the ACM Digital Library. Please enter the CCS XML code 
-% for the classification terms that describe your paper. To get the 
-% XML code, please use the following procedure, which is
-% demonstrated using three NIME-related example terms: Applied
-% computing~Sound and music computing, Applied computing~Performing
-% arts, and Information systems~Music retrieval.
-%
-% 1) Browse to the website http://dl.acm.org/ccs_flat.cfm.
-% 2) Select one to three classification terms from the website that
-%    describe your paper (e.g. for the example paper Applied
-%    computing~Sound and music computing, Applied 
-%    computing~Performing arts, and Information systems~Music
-%    retrieval.).
-% 3) For each classification you need to select the relevance
-%    (e.g. for this example, Sound and music computing is "high",
-%    Performing arts is "low", and Music retrieval is "Medium")
-% 4) Once you have selected the last term, click on "view CCS Tex
-%    Code". This will generate some code, which includes some CCSXML
-%    and some lines beginning with \ccsdesc.
-% 5) Keep all of this code, as you will need it for entering into
-%    the Precision Conference System paper submission form.
-% 6) For this document, keep only the \ccsdesc lines. Here is what
-%    you would paste for the classification example:
-
-%% The code below is generated by the tool at http://dl.acm.org/ccs.cfm.
-%% Please copy and paste the code instead of the example below.
-%%
-\begin{CCSXML}
-<ccs2012>
- </ccs2012>
-\end{CCSXML}
-
-\ccsdesc[500]{Applied computing~Sound and music computing}
-\ccsdesc[100]{Applied computing~Performing arts}
-\ccsdesc[300]{Information systems~Music retrieval}
-
+ 
 \keywords{NIME, proceedings, \LaTeX, template}
-
-% this line creates the CCS Concepts section.
-%\printccsdesc
-
-%\textbf{Please read the comments starting on line 140 of the nime-template.tex file to see how to create the CCS Concept Classifications!} % Remove this line in your paper!
 
 \maketitle
 
@@ -540,31 +453,12 @@ This is what is stipulated in the SIGS style specifications.
 No other citation format is endorsed or supported.
 
 \subsection{Blind Review}
-A convenient flag has been provided that will allow you to easily mask any text
-or reference that could be used to identify you as the author. To enable the
-feature, comment the line \texttt{\textbackslash usepackage\{anonymize\}} and
-uncomment the \texttt{\textbackslash usepackage[blind]\{anonymize\}} lines near
-the top of the file. When \texttt{\textbackslash usepackage[blind]\{anonymize\}}
-is enabled, anonymized text will be blackened out and masked bibliography names
-and titles will be anonymised. For example, the following will cause the package
-to generate a blind review version of the manuscript.\\
+Specify \verb|anonymous,review| in square brackets, to enable ``double-blind'' paper submission for review.
 
-\texttt{\%\textbackslash usepackage\{anonymize\}}  \\
-\texttt{\textbackslash usepackage[blind]\{anonymize\}} \\
+\begin{verbatim}
+  \documentclass[sigchi,anonymous,review]{nimepaper}
+\end{verbatim}
 
-
-The following configuration will cause the manuscript to disable masking text and produce the version of the manuscript for publication.
-
-\texttt{\textbackslash usepackage\{anonymize\}} \\
-\texttt{\%\textbackslash usepackage[blind]\{anonymize\}} \\
-
-\subsubsection{Masking text}
-To mask text that may identify you, place the text you want to hide inside the \textbackslash anonymize function. If you have enabled the blind review feature, \anonymize{you will not be able to read this text}. Change back to the non-blind mode when you are ready to publish. 
-
-\subsubsection{Masking publications}
-In order to mask your publications,  you will need to make a copy of your personal references, using the second version with a key name adding \texttt{-hidden}. For example, if your reference key is \texttt{myotherpublication}, make a copy called \texttt{myotherpublication-hidden} that has text displayed how you would like it displayed in blind review mode.  Wrap your reference name with the \textit{anoncite} function. For example, to make \texttt{{\char'134}cite\{mypublication\}} anonymous in the blind version, use the following instead.\\
-\texttt{{\char'134}cite\{{\char'134}anoncite\{mypublication\}\}}.
-You will note that \cite{\anoncite{mypublication}} and \cite{\anoncite{myotherpublication}} were written by me, so in blind mode, the identifying parts will be suppressed.
 
 \subsection{Links}
 
