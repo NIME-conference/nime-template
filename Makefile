@@ -22,6 +22,7 @@ $(MUSIC_PDF): nime-music-workshop-template.tex
 clean:
 	rm -f $(NIME_PDF) $(MUSIC_PDF)
 	rm -f *.aux *.log *.out \
-		*.bbl *.blg
+		*.bbl *.blg *.fls *.fdb_latexmk \
+		*.synctex.gz
 
 .PHONY: all clean

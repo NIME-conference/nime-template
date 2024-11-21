@@ -23,16 +23,16 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: |
-            papers/latex/nime-template.tex
-            music/latex/music-proceedings-template.tex
+            nime-paper-template.tex
+            nime-music-workshop-template.tex
           work_in_root_file_dir: true
       - name: Upload paper file
         uses: actions/upload-artifact@v4
         with:
           name: nime-paper
-          path: papers/latex/nime-template.pdf
+          path: nime-paper-template.pdf
       - name: Upload music file
         uses: actions/upload-artifact@v4
         with:
           name: nime-music
-          path: music/latex/music-proceedings-template.pdf
+          path: nime-music-workshop-template.pdf
