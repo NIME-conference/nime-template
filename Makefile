@@ -1,7 +1,7 @@
 
 # Output PDF names
-NIME_PDF = nime-paper-template.pdf
-MUSIC_PDF = nime-music-workshop-template.pdf
+PAPER_TEMPLATE = nime-paper-template
+MUSIC_TEMPLATE = nime-music-workshop-template
 
 # Full compilation rule with BibTeX
 define compile_tex
@@ -12,15 +12,17 @@ define compile_tex
 	cd $(dir $<) && pdflatex -interaction=nonstopmode $(notdir $<)
 endef
 
-$(NIME_PDF): nime-paper-template.tex
+$(PAPER_TEMPLATE).pdf: $(PAPER_TEMPLATE).tex
 	$(compile_tex)
 
-$(MUSIC_PDF): nime-music-workshop-template.tex
+$(MUSIC_TEMPLATE).pdf: $(MUSIC_TEMPLATE).tex
 	$(compile_tex)
+
+all: $(MUSIC_TEMPLATE).pdf $(PAPER_TEMPLATE).pdf
 
 # Clean generated files
 clean:
-	rm -f $(NIME_PDF) $(MUSIC_PDF)
+	rm -f $(PAPER_TEMPLATE).pdf $(MUSIC_TEMPLATE).pdf
 	rm -f *.aux *.log *.out \
 		*.bbl *.blg *.fls *.fdb_latexmk \
 		*.synctex.gz
