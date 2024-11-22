@@ -1,28 +1,43 @@
-% NIME 2020 Music Proceedings Template
+% NIME Music and Workshop Proceedings Template
 
 % Modified November 2024 by Charles Martin
 % Modified December 2019 by Joe Wright
 % Created August 2019 by Niccolo Granieri
-% This is file `music-proceedings-template.tex',
 
-\documentclass{nimemusic}
+\documentclass[acmsmall]{nimeart}
 
-% Rights management information.
-\setcopyright{cc4}
-\nimeYear{2024}
-\nimeMonth{9}
-% \nimeDOI{10.1145/XXXXXXX.XXXXXXX}
+%% Rights management information.  This information is sent to you
+%% when you complete the rights form.  These commands have SAMPLE
+%% values in them; it is your responsibility as an author to replace
+%% the commands and values with those provided to you when you
+%% complete the rights form.
+\setcopyright{cc}
+\copyrightyear{2025}
+\acmYear{2025}
+\acmDOI{}
+%% These commands are for a PROCEEDINGS abstract or paper.
+%% Make sure this is up to date with the correct edition of NIME.
+\acmConference[NIME '25]{International Conference on New Interfaces for Musical Expression}{June 24--27,
+  2025}{Canberra, Australia}
+%% This suppresses the ACM Reference Format printing.
+\settopmatter{printacmref=false}
+%%
+%%  Uncomment \acmBooktitle if the title of the proceedings is different
+%%  from ``Proceedings of ...''!
+%%
+%%\acmBooktitle{Woodstock '18: ACM Symposium on Neural Gaze Detection,
+%%  June 03--05, 2018, Woodstock, NY}
+\acmISBN{}
 
-% Comment out one of the following lines...
-\whichProceedings{Music Proceedings of the International Conference on New Interfaces for Musical Expression}
-% \whichProceedings{Workshop Proceedings of the International Conference on New Interfaces for Musical Expression}
 
-% Make sure this is correct for the NIME you are submitting to.
-\whichNIME{NIME'25, June 24--27, 2025. The Australian National University, Canberra, Australia.}
-
+%%
+%% end of the preamble, start of the body of the document source.
 \begin{document}
 
-\title{Title: Your NIME Music Performance}
+%%
+%% The "title" command has an optional parameter,
+%% allowing the author to define a "short title" to be used in page headers.
+\title{The NIME of the Title Is Hope}
 
 % Author information, leave this blank for the initial submission.
 \author{Author One}
@@ -46,12 +61,36 @@
   \country{Country}
 }
 
-% Uncomment this command to define a custom short list of authors.
-% \renewcommand{\shortauthors}{One, Two and Three}
+%%
+%% By default, the full list of authors will be used in the page
+%% headers. Often, this list is too long, and will overlap
+%% other information printed in the page headers. This command allows
+%% the author to define a more concise list
+%% of authors' names for this purpose.
+\renewcommand{\shortauthors}{Trovato et al.}
 
-% Keywords: use these to describe your work.
-\keywords{typical, keywords, fix, these, before, submission}
+%%
+%% The abstract is a short summary of the work to be presented in the
+%% article.
+\begin{abstract}
+  A clear and well-documented \LaTeX\ document is presented as an
+  article formatted for publication by ACM in a conference proceedings
+  or journal publication. This uses ``nimeart'', a fork of the ``acmart''
+  documentclass with additions for the NIME conference. This
+  article presents and explains many of the common variations, as well
+  as many of the formatting elements an author may use in the
+  preparation of the documentation of their work.
+\end{abstract}
 
+%%
+%% Keywords. The author(s) should pick words that accurately describe
+%% the work being presented. Separate the keywords with commas.
+\keywords{Do, Not, Us, This, Code, Put, the, Correct, Terms, for,
+  Your, Paper}
+
+%%
+%% This command processes the author and affiliation and title
+%% information and builds the first part of the formatted document.
 \maketitle
 
 \section{Program Notes}
@@ -61,9 +100,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sodales nunc vitae
 Plus, some citations to articles: \cite{doe2023,
 wizard2022, alien2024}.
 
-\begin{figure}[hbt]
-  \includegraphics{NIME_Mouse}
-  \caption{The NIME Mouse}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{images/sampleteaser.pdf}
+  \caption{Two synthesisers on a table, 2019.}
+  \Description{Enjoying looking at two synthesisers.
+  A Korg Monotron and a Korg Volca FM.}
 \end{figure}
 
 \section{Project Description}
@@ -87,6 +129,12 @@ In this section, please provide a list of links to media representations of your
 	\item Audio: \url{https://www.yournimeaudiolink.com/younameit}
 \end{itemize}
 
+\section{Ethical Standards}
+
+Please note that an Ethical Standards section is required for all NIME submissions.
+
+This could include information regarding sources of funding, sustainability factors, potential conflicts of interest,  informed consent if the research involved human participants, statement on welfare of animals if the research involved animals, or other ethical factors that are relevant to the work.
+
 % The acknowledgements section is optional and can be removed if not needed.
 \begin{acks}
 The authors would like to thank\ldots
@@ -94,14 +142,10 @@ The authors would like to thank\ldots
 This work was supported by\ldots
 \end{acks}
 
-\section*{Ethical Standards}
-
-Please note that an Ethical Standards section is required for all NIME submissions.
-
-This could include information regarding sources of funding, sustainability factors, potential conflicts of interest,  informed consent if the research involved human participants, statement on welfare of animals if the research involved animals, or other ethical factors that are relevant to the work.
-
-% bibliography style
+%%
+%% The next two lines define the bibliography style to be used, and
+%% the bibliography file.
 \bibliographystyle{ACM-Reference-Format}
-% reference file
-\bibliography{references}
+\bibliography{sample-references}
+
 \end{document}
