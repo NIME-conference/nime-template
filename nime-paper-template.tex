@@ -63,7 +63,7 @@
 %% for your publication.
 %%
 %%
-\documentclass[sigconf, anonymous, review]{nimeart}
+\documentclass[sigconf,anonymous,review]{nimeart}
 %%
 %% \BibTeX command to typeset BibTeX logo in the docs
 \AtBeginDocument{%
@@ -352,28 +352,40 @@ use.
 Note that authors' addresses are mandatory for journal articles.
 
 \section{Anonymisation and Blind Review}
-Anonymisation is a \textbf{crucial} component for NIME paper submissions. We kindly ask authors to ensure that all information that could introduce bias in the review process is anonymised.
+% Anonymisation is a \textbf{crucial} component for NIME paper submissions. We kindly ask authors to ensure that all information that could introduce bias in the review process is anonymised.
+
+NIME review for the paper and music tracks are \textbf{double blind}; i.e., the reviewers don’t know who the authors are and the authors don’t know who the reviewers are. 
+To enable this, we ask authors to ensure that all information that could introduce bias in the review process is anonymised.
+All paper category submissions must be anonymised so that no description or information that can reveal the authors’ identities is included in the submission (e.g., detailed descriptions of locations, projects names, linked websites, images with faces of authors). Citations to the authors’ previous work should preferably be cited in the third person to enable proper review (e.g., “As described in our previous work [4]” should be “As described by Martin et al. [4]). 
+
+If this is not possible, specific references may be anonymised like this:
+
+[1] Anonymised Author A and Anonymised Author B. YYYY. ANONYMISED: a Software Package for Technical Computations, version N. Retrieved Month DD, YYYY from \url{http://anonymised.edu/path/index.html}
+
 
 To anonymise author names, please specify \verb|anonymous,review| in square brackets when submitting your paper.
 \begin{verbatim}
   \documentclass[sigchi,anonymous,review]{nimepaper}
 \end{verbatim}
 
-You can also hide text in the paper like this:
+You can hide text in the paper like this:
 
-\begin{verbatim}
-% Both examples from acmart manual.
-\begin{anonsuppress}
-  This is the continuation of the previous work by the author
-  \cite{prev1, prev2}.
-\end{anonsuppress}
-\end{verbatim}
-
-or
 \begin{verbatim}
 This work was performed at \anon{NSA}.
 This work was performed at \anon[No Such Agency]{NSA}.
 \end{verbatim}
+
+% TODO: this is a bug!
+\begin{verbatim}
+  \begin{anonsuppress}
+    This is the continuation of the previous work by the author
+    \cite{prev1, prev2}.
+  \end{anonsuppress}
+\end{verbatim}
+
+
+For more information on anonymisation, you can checkout:
+\url{https://nime2025.org/submissions/\#anonymisation}.
 
 \section{User-Defined Keywords}
 
@@ -574,6 +586,10 @@ figure in your article, place the command immediately before the
     \Description{figure description}
   \end{teaserfigure}
 \end{verbatim}
+
+\subsection{Links}
+
+Links to URLs can be included using the \texttt{{\char'134}url} command. This will generate a clickable link like this: \url{https://www.nime.org}.
 
 \section{Citations and Bibliographies}
 
