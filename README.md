@@ -8,6 +8,10 @@ This repository includes publication templates for the International Conference 
 
 The templates have example text demonstrating many interesting and useful features, but you should check the call for specific editions of the NIME conference to make sure you are structuring your submission correctly.
 
+The `word` folder also contains .docx MS Word templates for all tracks. 
+
+In addition to the alt.nime template, you can also find the folder `alt-nime_pictorial-templates`, which contains Word .docx, PowerPoint .pptx, and InDesign templates for pictorial-oriented work should you wish to use this format for your alt.nime submission. These templates are modeled on the ACM SIGCHI Pictorial template used a the ACM TEI and DIS conferences and provide a visual focus for your research. 
+
 ## `nimeart.cls`
 
 `nimeart.cls` is the LaTeX class for generating PDF documents from these templates. `nimeart` is a fork of the [ACM publication format](https://www.acm.org/publications/proceedings-template) `acmart` to provide specific features for the NIME conference:
@@ -31,3 +35,5 @@ We thank the authors of acmart and the ACM community for their ongoing contribut
 ## History
 
 NIME traditionally used the old ACM sig-alternate (2-column) class forked in 2009. In 2019, NIME began to use a fork of acmart for 1-column music submissions. NIME used PubPub in 2021-2022, an alternative web-based publication platform. For 2025, the NIME template has been updated to adopt a fork of the latest ACM publication format.
+
+Many thanks to Allie Teixeira Riggs for adapting the ACM SIGCHI Pictorial templates for use in the alt.nime track for 2026.
