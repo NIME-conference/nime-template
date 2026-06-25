@@ -1,0 +1,154 @@
+%%
+%% nime.latex — Pandoc LaTeX template for the NIME (nimeart) document class.
+%%
+%% This lets you write a NIME paper in Markdown (or convert from .docx) and
+%% render it to a NIME-formatted PDF via pandoc + pdflatex.
+%%
+%% It maps YAML metadata onto the nimeart/acmart front-matter commands and
+%% relies on pandoc's built-in partials for the document body (tables, lists,
+%% figures, code highlighting, citeproc, etc.). acmart supplies its own fonts,
+%% hyperref and geometry, so the pandoc font/geometry partials are deliberately
+%% NOT included here.
+%%
+\documentclass[$if(classoption)$$for(classoption)$$classoption$$sep$,$endfor$$else$sigconf$endif$]{nimeart}
+
+%% This package avoids urls margin overflow
+\usepackage{xurl}
+%% CJK support (used by some author names in the sample)
+\usepackage{CJKutf8}
+
+%% \BibTeX command to typeset BibTeX logo in the docs
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    Bib\TeX}}}
+
+$-- Body-support macros from pandoc (lists, tables, figures, code, citeproc).
+$-- `indent` is forced on in the defaults file so this partial does NOT pull in
+$-- parskip, which would break acmart's paragraph formatting.
+$-- NB: acmart already loads amsmath/amssymb and a maths font (newtxmath), so
+$-- we must NOT reload amssymb here (it clashes over \Bbbk).
+\usepackage{iftex}
+$common.latex()$
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+%% ---------------------------------------------------------------------------
+%% NIME / ACM publication metadata
+%% ---------------------------------------------------------------------------
+\setcopyright{$if(copyright)$$copyright$$else$cc$endif$}
+\copyrightyear{$if(copyrightyear)$$copyrightyear$$else$2026$endif$}
+\acmYear{$if(acmyear)$$acmyear$$else$2026$endif$}
+\acmDOI{$if(acmdoi)$$acmdoi$$endif$}
+\acmISBN{$if(acmisbn)$$acmisbn$$endif$}
+$if(conference)$
+\acmConference[$conference.short$]{$conference.name$}{$conference.date$}{$conference.location$}
+$else$
+\acmConference[NIME '26]{International Conference on New Interfaces for Musical Expression}{June 23--26, 2026}{London, UK}
+$endif$
+%% Suppress the ACM Reference Format block (NIME default).
+\settopmatter{printacmref=$if(printacmref)$$printacmref$$else$false$endif$}
+
+\begin{document}
+
+%% ---------------------------------------------------------------------------
+%% Title
+%% ---------------------------------------------------------------------------
+$if(shorttitle)$
+\title[$shorttitle$]{$title$}
+$else$
+\title{$if(title)$$title$$else$Title$endif$}
+$endif$
+$if(subtitle)$
+\subtitle{$subtitle$}
+$endif$
+
+%% ---------------------------------------------------------------------------
+%% Authors and affiliations
+%% ---------------------------------------------------------------------------
+$for(author)$
+\author{$author.name$}
+$if(author.note)$
+\authornote{$author.note$}
+$endif$
+$if(author.notemark)$
+\authornotemark[$author.notemark$]
+$endif$
+$if(author.email)$
+\email{$author.email$}
+$endif$
+$if(author.orcid)$
+\orcid{$author.orcid$}
+$endif$
+\affiliation{%
+$if(author.institution)$  \institution{$author.institution$}
+$endif$$if(author.department)$  \department{$author.department$}
+$endif$$if(author.city)$  \city{$author.city$}
+$endif$$if(author.state)$  \state{$author.state$}
+$endif$$if(author.country)$  \country{$author.country$}
+$endif$}
+
+$endfor$
+$if(shortauthors)$
+\renewcommand{\shortauthors}{$shortauthors$}
+$endif$
+
+%% ---------------------------------------------------------------------------
+%% Abstract and keywords
+%% ---------------------------------------------------------------------------
+$if(abstract)$
+\begin{abstract}
+$abstract$
+\end{abstract}
+$endif$
+$if(keywords)$
+\keywords{$for(keywords)$$keywords$$sep$, $endfor$}
+$endif$
+
+%% ---------------------------------------------------------------------------
+%% Teaser figure (optional)
+%% ---------------------------------------------------------------------------
+$if(teaser)$
+\begin{teaserfigure}
+  \includegraphics[width=\textwidth]{$teaser.image$}
+$if(teaser.caption)$  \caption{$teaser.caption$}
+$endif$$if(teaser.description)$  \Description{$teaser.description$}
+$endif$$if(teaser.label)$  \label{$teaser.label$}
+$endif$\end{teaserfigure}
+$endif$
+
+\maketitle
+
+$for(include-before)$
+$include-before$
+
+$endfor$
+$body$
+
+$if(acknowledgments)$
+\begin{acks}
+$acknowledgments$
+\end{acks}
+$endif$
+
+$if(nocite-ids)$
+\nocite{$for(nocite-ids)$$it$$sep$, $endfor$}
+$endif$
+$if(natbib)$
+$if(bibliography)$
+$-- \bibliographystyle is emitted by pandoc's common partial (driven by the
+$-- biblio-style variable, set to ACM-Reference-Format in nime-defaults.yaml);
+$-- emitting it again here would put two \bibstyle commands in the .aux and
+$-- break bibtex, so we only emit \bibliography.
+\bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
+$endif$
+$endif$
+$if(biblatex)$
+\printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
+$endif$
+
+$for(include-after)$
+$include-after$
+
+$endfor$
+\end{document}
