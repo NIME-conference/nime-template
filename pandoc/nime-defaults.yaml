@@ -1,0 +1,33 @@
+# Pandoc defaults for building NIME PDFs from Markdown or DOCX.
+#
+#   pandoc --defaults pandoc/nime-defaults.yaml -o out.tex pandoc/example.md
+#
+# Invoked via the Makefile targets `md-pdf` / `docx-pdf`, which run pdflatex +
+# bibtex afterwards so the NIME (nimeart) class and ACM-Reference-Format style
+# are applied. Paths are relative to the repository root.
+
+# The input reader (`-f`/`--from`) is set per Makefile target, since Markdown
+# and DOCX need different readers.
+to: latex
+template: pandoc/nime.latex
+
+# Emit \citep/\citet + \bibliography{} so bibtex + ACM-Reference-Format runs,
+# matching the LaTeX templates (rather than pandoc's own citeproc renderer).
+cite-method: natbib
+standalone: true
+
+filters:
+  # Render tables as `table`+`tabular` floats (pandoc's default longtable
+  # output fails in two-column sigconf mode).
+  - pandoc/nime-tables.lua
+
+variables:
+  # Use the ACM reference style for the bibliography (matches the LaTeX
+  # templates). This drives the single \bibliographystyle emitted by pandoc.
+  biblio-style: ACM-Reference-Format
+  # Force indented paragraphs: stops pandoc's `common` partial from loading
+  # parskip, which would override acmart's strict paragraph formatting.
+  indent: true
+  # Default document-class option. Override per-file with `classoption:` in the
+  # YAML front matter, e.g. [sigconf, anonymous, review] for blind submission.
+  classoption: sigconf

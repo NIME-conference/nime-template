@@ -10,6 +10,21 @@ The templates have example text demonstrating many interesting and useful featur
 
 The `word` folder also contains .docx MS Word templates for all tracks. 
 
+## Markdown / Word → NIME PDF
+
+If you would rather write in **Markdown** (or convert from a **Word `.docx`**)
+than edit LaTeX directly, the `pandoc` folder contains a pipeline that renders
+those sources to a NIME-formatted PDF using the same `nimeart` class:
+
+```sh
+make md-pdf                              # builds the example pandoc/example.md
+make md-pdf   SRC=mypaper.md
+make docx-pdf SRC=mypaper.docx META=mypaper-meta.yaml
+```
+
+This requires [pandoc](https://pandoc.org) in addition to the LaTeX toolchain.
+See [`pandoc/README.md`](pandoc/README.md) for the metadata format and details.
+
 In addition to the alt.nime template, you can also find the folder `alt-nime_pictorial-templates`, which contains Word .docx, PowerPoint .pptx, and InDesign templates for pictorial-oriented work should you wish to use this format for your alt.nime submission. These templates are modeled on the ACM SIGCHI Pictorial template used a the ACM TEI and DIS conferences and provide a visual focus for your research. 
 
 ## `nimeart.cls`

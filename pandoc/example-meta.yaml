@@ -1,0 +1,35 @@
+# Metadata sidecar for the DOCX → NIME PDF path.
+#
+# A Word document carries the prose, but not the structured NIME front matter
+# (authors, affiliations, keywords, ...). Supply that here and combine the two:
+#
+#   make docx-pdf SRC=mypaper.docx META=pandoc/example-meta.yaml
+#
+# The fields are identical to the YAML front matter in pandoc/example.md.
+---
+title: "Writing NIME Papers in Word"
+shorttitle: "NIME Papers in Word"
+classoption: sigconf
+
+author:
+  - name: Ada Lovelace
+    email: ada@example.org
+    institution: Analytical Engine Lab
+    city: London
+    country: United Kingdom
+  - name: Alan Turing
+    email: alan@example.org
+    institution: Bletchley University
+    city: Milton Keynes
+    country: United Kingdom
+
+shortauthors: "Lovelace and Turing"
+
+abstract: |
+  This abstract comes from the metadata sidecar rather than the Word document,
+  demonstrating the DOCX → NIME PDF path.
+
+keywords: [word, docx, pandoc, NIME, authoring]
+
+bibliography: sample-references.bib
+---
